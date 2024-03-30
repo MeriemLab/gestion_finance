@@ -16,6 +16,10 @@ class Client(models.Model):
         ('C', ('Client')),
         ('S', ('Supplier')),
     )
+    dossier_valide=(
+        ('t', ('true')),
+        ('f', ('false')),
+     )
 
     id = models.CharField(max_length=100 , primary_key=True,blank=True)
 
@@ -73,10 +77,10 @@ class Client(models.Model):
 
     fax = models.CharField(max_length=100,blank=True)
 
-    dossier_valide = models.CharField(max_length=1, choices=etat_dossier,blank=True)
+    #dossier_valide = models.CharField(max_length=1, choices=etat_dossier,blank=True)
 
     statut = models.CharField(max_length=1, choices=etat_statut,blank=True)
-
+    est_vip = models.BooleanField(default=False) 
     class Meta: 
         verbose_name = "client"
         verbose_name_plural = "clients"
