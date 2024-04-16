@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "clients",
-    "facture",
+    "factures_vente",
+    "factures_service",
     "rest_framework",
 ]
 

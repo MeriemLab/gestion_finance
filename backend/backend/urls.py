@@ -7,5 +7,6 @@ from clients import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('clients.urls')),  # Inclure les URLs de l'application clients
-    path('api/', include('facture.urls')),
+    path('api/', include('factures_vente.urls')),
+   path('api/', include('factures_service.urls')),
 ]
