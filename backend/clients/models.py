@@ -1,5 +1,5 @@
 from django.db import models
-
+from devises.models import Devise
 class Client(models.Model):
     
     etat_dossier = (
@@ -41,7 +41,7 @@ class Client(models.Model):
 
     article_imposition = models.CharField(max_length=100,blank=True)
 
-    devise = models.CharField(max_length=100,blank=True)
+    devise = models.ForeignKey(Devise,on_delete=models.CASCADE,default='EUR')
 
     rue = models.CharField(max_length=100,blank=True)
 
