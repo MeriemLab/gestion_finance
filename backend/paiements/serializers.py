@@ -1,15 +1,7 @@
 from rest_framework import serializers
-from .models import FactureVente, FactureService, Paiement
+from .models import Paiement
 
-class FactureVenteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = FactureVente
-        fields = '__all__'
 
-class FactureServiceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = FactureService
-        fields = '__all__'
 
 class PaiementSerializer(serializers.ModelSerializer):
     class Meta:

@@ -7,7 +7,7 @@ class FactureVente(models.Model):
     date_creation = models.DateField(auto_now_add=True)
     date_comptabilisation = models.DateField(null=True, blank=True)
     date_decheance = models.DateField(null=True, blank=True)
-    # Champ facture_id comme cle primaire
+   
 
     def generate_id(self):
         return f"F{timezone.now().strftime('%Y%m%d')}"
