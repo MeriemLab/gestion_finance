@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Factureservice
+from .models import FactureService
 
-class FactureserviceSerializer(serializers.ModelSerializer):
+class FactureServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Factureservice
+        model = FactureService
         fields = ['facture_id', 'date_creation', 'date_comptabilisation', 'date_decheance']

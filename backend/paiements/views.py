@@ -1,10 +1,14 @@
 from rest_framework import generics
-from .models import Facture, Paiement
-from .serializers import FactureSerializer, PaiementSerializer
+from .models import FactureVente, FactureService, Paiement
+from .serializers import FactureVenteSerializer, FactureServiceSerializer, PaiementSerializer
 
-class FactureListCreate(generics.ListCreateAPIView):
-    queryset = Facture.objects.all()
-    serializer_class = FactureSerializer
+class FactureVenteListCreate(generics.ListCreateAPIView):
+    queryset = FactureVente.objects.all()
+    serializer_class = FactureVenteSerializer
+
+class FactureServiceListCreate(generics.ListCreateAPIView):
+    queryset = FactureService.objects.all()
+    serializer_class = FactureServiceSerializer
 
 class PaiementListCreate(generics.ListCreateAPIView):
     queryset = Paiement.objects.all()

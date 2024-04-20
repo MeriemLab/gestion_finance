@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework import generics
 
 class ClientListView(ListAPIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
 

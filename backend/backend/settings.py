@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'corsheaders',
     #'rest_framework_simplejwt',
     'paiements',
+    #'Authentification',
 ]
 
 MIDDLEWARE = [
@@ -99,7 +100,15 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -142,24 +151,24 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',  
+# ]
 
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
 
-CORS_ALLOW_HEADERS = [
-    'Accept',
-    'Authorization',
-    'Content-Type',
-]
+# CORS_ALLOW_HEADERS = [
+#     'Accept',
+#     'Authorization',
+#     'Content-Type',
+# ]
 
 # REST_FRAMEWORK = {
 
