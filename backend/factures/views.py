@@ -75,11 +75,7 @@ class FactureVenteUpdateView(UpdateAPIView):
     queryset = FactureVente.objects.all()
     serializer_class = FactureVenteSerializer
 
-class VueListeNonpayée(generics.ListAPIView):
-    serializer_class = FactureVenteSerializer
 
-    def get_queryset(self):
-        return FactureVente.objects.filter(non_payée=True)
     
 class VueListeNonpayée(APIView):
     def get(self, request, format=None):
