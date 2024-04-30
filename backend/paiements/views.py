@@ -1,7 +1,6 @@
 from rest_framework import generics
-from .models import  Paiement
+from .models import Paiement
 from .serializers import PaiementSerializer
-
 
 class PaiementListCreate(generics.ListCreateAPIView):
     queryset = Paiement.objects.all()

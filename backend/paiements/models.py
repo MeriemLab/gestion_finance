@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
-from factures_vente.models import FactureVente
-from factures_service.models import FactureService
+from factures.models import FactureVente
+from factures.models import FactureService
 
 class Paiement(models.Model):
     COMPLET = 'C'

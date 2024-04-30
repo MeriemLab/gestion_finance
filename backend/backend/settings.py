@@ -40,13 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "clients",
     "devises",
-    "factures_vente",
-    "factures_service",
+    #"factures_vente",
+    #"factures_service",
     "rest_framework",
     'corsheaders',
     #'rest_framework_simplejwt',
     'paiements',
-    'Authentification',
+    #'rest_framework_simplejwt',
+    'commandes',
+    'produits',
+    #'commande_ligne',
+    #'statistiques'
+    #'drf_extension',
+    'factures'
 ]
 
 MIDDLEWARE = [
@@ -100,16 +106,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+#REST_FRAMEWORK = {
+#    'DEFAULT_AUTHENTICATION_CLASSES': [
+#        'rest_framework_simplejwt.authentication.JWTAuthentication',
+#        'rest_framework.authentication.SessionAuthentication',
         
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-}
+#    ],
+#    'DEFAULT_PERMISSION_CLASSES': [
+#        'rest_framework.permissions.IsAuthenticated',
+#    ],
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -152,31 +158,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000/AddClient',  
-]
+#CORS_ALLOWED_ORIGINS = [
+#    'http://localhost:3000/AddClient',  
+#]
 
 
-# CORS_ALLOW_METHODS = [
-#     'DELETE',
-#     'GET',
-#     'OPTIONS',
-#     'PATCH',
-#     'POST',
-#     'PUT',
-# ]
-
-# CORS_ALLOW_HEADERS = [
-#     'Accept',
-#     'Authorization',
-#     'Content-Type',
-# ]
-
-# REST_FRAMEWORK = {
-
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-        
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     )
-    
-# }

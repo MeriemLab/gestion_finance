@@ -1,9 +1,9 @@
 from django.urls import path
 from .views import (
     ClientListView, ClientDetailView, ClientCreateView,
-    ClientUpdateView, ClientDeleteView
+    ClientUpdateView, ClientDeleteView, VueListeClientsVIP
 )
-from .views import VueListeClientsVIP
+
 urlpatterns = [
     path('clients/', ClientListView.as_view(), name='client-list'),
     path('clients/<int:pk>/', ClientDetailView.as_view(), name='client-detail'),
