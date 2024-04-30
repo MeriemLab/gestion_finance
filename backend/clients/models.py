@@ -88,7 +88,7 @@ class Client(models.Model):
         verbose_name_plural = "clients"
 
     def __str__(self):
-        return self.raison_sociale  # Vous pouvez retourner n'importe quel champ représentatif de votre client
+        return self.nom  # Vous pouvez retourner n'importe quel champ représentatif de votre client
 
    
     

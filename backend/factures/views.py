@@ -12,6 +12,8 @@ from django.http import  HttpResponse
 from .models import FactureVente
 from .serializers import FactureVenteSerializer
 from rest_framework import generics
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 class FactureServiceListView(ListAPIView):
     permission_classes = [IsAuthenticated]
@@ -27,11 +29,7 @@ class FactureServiceUpdateView(UpdateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = FactureService.objects.all()
     serializer_class = FactureServiceSerializer
-class VueListeNonpayée(generics.ListAPIView):
-    serializer_class = FactureServiceSerializer
 
-    def get_queryset(self):
-        return FactureService.objects.filter(non_payée=True)
 class PDFFactureView(View):
     def get(self, requNon, id, *args, **kwargs):
      try:
@@ -83,8 +81,15 @@ class VueListeNonpayée(generics.ListAPIView):
     def get_queryset(self):
         return FactureVente.objects.filter(non_payée=True)
     
-class VueListeNonpayée(generics.ListAPIView):
-    serializer_class = FactureServiceSerializer
+class VueListeNonpayée(APIView):
+    def get(self, request, format=None):
+        factures_service = FactureService.objects.filter(non_payée=True)
+        factures_vente = FactureVente.objects.filter(non_payée=True)
 
-    def get_queryset(self):
-        return FactureService.objects.filter(non_payée=True)
+        factures_service_serialized = FactureServiceSerializer(factures_service, many=True)
+        factures_vente_serialized = FactureVenteSerializer(factures_vente, many=True)
+
+        return Response({
+            "factures_service": factures_service_serialized.data,
+            "factures_vente": factures_vente_serialized.data
+        })
