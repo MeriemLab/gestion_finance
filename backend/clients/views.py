@@ -1,4 +1,5 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import ListAPIView,  CreateAPIView, UpdateAPIView, DestroyAPIView
+from .models import Client
 from .models import Client
 from .serializers import ClientSerializer
 
@@ -7,6 +8,10 @@ from rest_framework.response import Response
 
 from rest_framework import status
 from rest_framework import generics
+
+from rest_framework.generics import ListAPIView
+from .models import Client
+from .serializers import ClientSerializer
 
 class ClientListView(ListAPIView):
     permission_classes = [IsAuthenticated]
@@ -54,3 +59,4 @@ class VueListeClientsVIP(generics.ListAPIView):
 
     def get_queryset(self):
         return Client.objects.filter(est_vip=True)
+

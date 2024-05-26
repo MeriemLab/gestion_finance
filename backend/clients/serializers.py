@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Client
 
+
 class ClientSerializer(serializers.ModelSerializer):
     devise_nom = serializers.SerializerMethodField()  
 
@@ -12,3 +13,4 @@ class ClientSerializer(serializers.ModelSerializer):
         if obj.devise:
             return obj.devise.devise
         return None
+

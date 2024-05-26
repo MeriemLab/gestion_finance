@@ -91,4 +91,3 @@ class Client(models.Model):
         return self.nom  # Vous pouvez retourner n'importe quel champ représentatif de votre client
 
    
-    

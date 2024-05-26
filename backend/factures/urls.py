@@ -1,21 +1,18 @@
 from django.urls import path
-from .views import FactureServiceListView , FactureServiceCreateView , FactureServiceUpdateView , PDFFactureView,VueListeNonpayée
-from .views import FactureVenteListView,  FactureVenteCreateView, FactureVenteUpdateView , PDFFactureView,VueListeNonpayée
-
+from .views import (
+    FactureVenteList,
+    FactureServiceList,
+    FactureNonPayeeList,
+    FactureListCreate , 
+    FactureListView
+)
 
 urlpatterns = [
-    path('factures_service/', FactureServiceListView.as_view(), name='facture-list'),
+    path('factures/', FactureListView.as_view(), name='facture-list'),
+    path('factures/vente/', FactureVenteList.as_view(), name='facture-vente-list'),
+    path('factures/service/', FactureServiceList.as_view(), name='facture-service-list'),
+    path('factures/non-payee/', FactureNonPayeeList.as_view(), name='facture-non-payee-list'),
+    path('factures/ajouter/', FactureListCreate.as_view(), name='facture-ajouter'),
     
-    path('factures_service/create/', FactureServiceCreateView.as_view(), name='facture-create'),  
-    path('factures_service/<int:pk>/update/', FactureServiceUpdateView.as_view(), name='facture-update'),
-    path('factures_service/<int:id>/pdf/', PDFFactureView.as_view(), name='facture-pdf'),
-    path('factures_vente/', FactureVenteListView.as_view(), name='facture-list'),
-    path('factures_vente/create/', FactureVenteCreateView.as_view(), name='facture-create'),
-    path('factures_vente/<int:pk>/update/', FactureVenteUpdateView.as_view(), name='facture-update'),
-    path('factures_vente/<int:id>/pdf/', PDFFactureView.as_view(), name='facture-pdf'),
-    path('Non-payées/', VueListeNonpayée.as_view(), name='liste_factures_nonpayée'),
-
+    # Autres URLs de votre application...
 ]
-
-
-
