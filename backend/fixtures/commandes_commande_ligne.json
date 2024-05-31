@@ -1,0 +1,66 @@
+[
+    {
+      "model": "commandes.commande",
+      "pk": 1,
+      "fields": {
+        "client": 1,
+        "tva": 20.0,
+        "date_commande": "2024-04-28",
+        "pht": 120.0,
+        "mtva": 24.0,
+        "tht": 120.0,
+        "ttva": 24.0,
+        "ttc": 144.0,
+        "est_promo": false,
+        "code_promo": ""
+      }
+    },
+    {
+      "model": "commandes.commande",
+      "pk": 2,
+      "fields": {
+        "client": 2,
+        "tva": 15.0,
+        "date_commande": "2024-04-28",
+        "pht": 300.0,
+        "mtva": 45.0,
+        "tht": 300.0,
+        "ttva": 45.0,
+        "ttc": 345.0,
+        "est_promo": true,
+        "code_promo": "PROMO123"
+      }
+    },
+    {
+      "model": "commandes.commande",
+      "pk": 3,
+      "fields": {
+        "client": 1,
+        "tva": null,
+        "date_commande": "2024-04-29",
+        "pht": 165.0,
+        "mtva": null,
+        "tht": 165.0,
+        "ttva": null,
+        "ttc": 181.5,
+        "est_promo": true,
+        "code_promo": "PROMO456"
+      }
+    },
+    {
+      "model": "commandes.commande",
+      "pk": 4,
+      "fields": {
+        "client": 2,
+        "tva": 20.0,
+        "date_commande": "2024-04-29",
+        "pht": 300.0,
+        "mtva": 60.0,
+        "tht": 300.0,
+        "ttva": 60.0,
+        "ttc": 360.0,
+        "est_promo": false,
+        "code_promo": ""
+      }
+    }
+  ]

@@ -21,4 +21,5 @@ urlpatterns = [
     #path('api/', include('commande_ligne.urls')),
     #path('api/', include('statistiques.urls')),
     path('api/', include('factures.urls')),
+    path('api/', include('avoirs.urls')),
 ]

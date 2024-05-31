@@ -1,0 +1,38 @@
+[
+    {
+      "model": "produits.produit",
+      "pk": 1,
+      "fields": {
+        "nom": "Produit A",
+        "description": "Description du Produit A",
+        "prix_unitaire": 50.0
+      }
+    },
+    {
+      "model": "produits.produit",
+      "pk": 2,
+      "fields": {
+        "nom": "Produit B",
+        "description": "Description du Produit B",
+        "prix_unitaire": 100.0
+      }
+    },
+    {
+      "model": "produits.produit",
+      "pk": 3,
+      "fields": {
+        "nom": "Produit C",
+        "description": "Description du Produit C",
+        "prix_unitaire": 75.0
+      }
+    },
+    {
+      "model": "produits.produit",
+      "pk": 4,
+      "fields": {
+        "nom": "Produit D",
+        "description": "Description du Produit D",
+        "prix_unitaire": 120.0
+      }
+    }
+  ]

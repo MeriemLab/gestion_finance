@@ -14,23 +14,23 @@ from datetime import timedelta
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+ #Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+ #Quick-start development settings - unsuitable for production
+ #See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+ #SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4!nonq*jlwm@kd&10bf8fzn^e%!km=_bl&jdnsvtxv403n-q)n'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: #don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
-# Application definition
+ #Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,14 +43,14 @@ INSTALLED_APPS = [
     "devises",
 
     "authentification",
-    #"statistiques",
+    
     "commandes",
-    # "commande_ligne",
+     
     "produits",
     "paiements",
     "factures",
   
-    
+    "avoirs",
     "axes",
     "rest_framework",
     'corsheaders',
@@ -91,8 +91,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+ #Database
+ #https://docs.djangoproject.com/en/5.0/ref/settings/databases
 
 DATABASES = {
 
@@ -113,7 +113,7 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+ #https://docs.djangoproject.com/en/5.0/ref/settings/auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -132,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
+ #https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -143,13 +143,13 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+ #Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+ #Default primary key field type
+ #https://docs.djangoproject.com/en/5.0/ref/settings/default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -218,10 +218,10 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
-AXES_FAILURE_LIMIT = 5  # Nombre maximal de tentatives de connexion avant le blocage
-AXES_LOCK_OUT_AT_FAILURE = True  # Bloquer automatiquement les utilisateurs après le nombre maximal d'échecs
-AXES_LOCKOUT_TEMPLATE = None  # Vous pouvez spécifier un modèle personnalisé pour le verrouillage
+AXES_FAILURE_LIMIT = 5   #Nombre maximal de tentatives de connexion avant le blocage
+AXES_LOCK_OUT_AT_FAILURE = True   #Bloquer automatiquement les utilisateurs après le nombre maximal d'échecs
+AXES_LOCKOUT_TEMPLATE = None   #Vous pouvez spécifier un modèle personnalisé pour le verrouillage
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Par défaut
-    'axes.backends.AxesBackend',  # Ajoutez cette ligne
+    'axes.backends.AxesBackend',   #Ajoutez cette ligne
 ]
